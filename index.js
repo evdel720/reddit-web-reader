@@ -2,16 +2,18 @@
 /* global getAccessCode */
 /* global requestPosts */
 /* global setRefreshTimeout */
-/* global setDefaultSection */
-/* global clearStorageIfTokenIsExpired */
+/* global setSectionChangeHandlers */
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log(window.sessionStorage);
   let connect = document.getElementById('connect');
   let scroll = document.getElementById('scroll');
-  setDefaultSection();
-  clearStorageIfTokenIsExpired();
   setSectionChangeHandlers();
+  if (!window.sessionStorage.section) {
+    window.sessionStorage.section = "hot";
+  }
+  if (window.sessionStorage.expiration_time < new Date().getTime()) {
+    window.sessionStorage.clear();
+  }
   if (window.sessionStorage.username) {
     connect.classList.add('hidden');
     scroll.classList.remove('hidden');
