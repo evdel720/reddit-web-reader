@@ -149,3 +149,8 @@ h6 {
   display: inline;
   margin-left: 5px;
 }
+
+ol {
+  margin-left: 3%;
+  margin-bottom: 20px;
+}
