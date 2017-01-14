@@ -5,6 +5,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   let connect = document.getElementById('connect');
+  if (window.sessionStorage.expiration_time < new Date().getTime()) {
+    window.sessionStorage.clear();
+  }
   if (window.sessionStorage.username) {
     connect.classList.add('hidden');
     requestPosts();

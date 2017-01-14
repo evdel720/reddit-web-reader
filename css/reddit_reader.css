@@ -1,3 +1,8 @@
+body {
+  background: #F5F3EE;
+  font-family: 'Roboto', cursive;
+}
+
 .hidden {
   display: none;
 }
@@ -5,4 +10,84 @@
 h1 {
   text-align: center;
   font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+h2, h5, p {
+  cursor: pointer;
+}
+
+h2:hover, h5:hover, p:hover {
+  text-decoration: underline;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  width: 94%;
+  margin-left: 3%;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 10px;
+  border-top: #ccc 1px solid;
+}
+
+li:first-of-type {
+  border-top: none;
+}
+
+img {
+  width: 8%;
+  margin: 0 1%;
+  height: 10vh;
+}
+
+.right {
+  width: 82%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+h2 {
+  padding-left: 10px;
+}
+
+.below {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+
+.below > * {
+  margin: 0 10px;
+}
+
+h4 {
+  width: 8%;
+  text-align: center;
+  align-self: center;
+}
+
+h3 {
+  color: #777;
+}
+
+h5 {
+  width: 10%;
+}
+
+p {
+  color: #00F;
+  margin: 20px;
+  text-align: center;
+}
+
+i {
+  margin-right: 10px;
 }
