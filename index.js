@@ -2,13 +2,16 @@
 /* global getAccessCode */
 /* global requestPosts */
 /* global setRefreshTimeout */
+/* global setDefaultSection */
+/* global clearStorageIfTokenIsExpired */
 
 document.addEventListener('DOMContentLoaded', () => {
+  console.log(window.sessionStorage);
   let connect = document.getElementById('connect');
   let scroll = document.getElementById('scroll');
-  if (window.sessionStorage.expiration_time < new Date().getTime()) {
-    window.sessionStorage.clear();
-  }
+  setDefaultSection();
+  clearStorageIfTokenIsExpired();
+  setSectionChangeHandlers();
   if (window.sessionStorage.username) {
     connect.classList.add('hidden');
     scroll.classList.remove('hidden');
