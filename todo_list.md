@@ -1,10 +1,11 @@
-
-infinite scroll/pagination
-mobile responsive
 take care of error message if any
+infinite scroll/pagination
 
-add/delete/edit subreddits
 votes
+add/delete/edit subreddits
+
+
+
 
 when request posts,
 see if there's now many posts, last post id

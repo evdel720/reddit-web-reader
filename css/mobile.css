@@ -27,4 +27,17 @@
   h4 {
     display: none;
   }
+
+  img {
+    width: 15%;
+    align-self: center;
+  }
+
+  h2 {
+    font-size: 14px;
+  }
+
+  .right {
+    justify-content: center;
+  }
 }
