@@ -1,11 +1,8 @@
-take care of error message if any
 infinite scroll/pagination
+take care of error message if any
 
 votes
 add/delete/edit subreddits
-
-
-
 
 when request posts,
 see if there's now many posts, last post id
