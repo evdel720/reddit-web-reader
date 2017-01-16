@@ -1,6 +1,7 @@
 body {
   background: #F5F3EE;
   font-family: 'Roboto', cursive;
+  margin-top: 20px;
 }
 
 .hidden {
@@ -14,11 +15,11 @@ h1 {
   margin-top: 10px;
 }
 
-h2, h5, h6 {
+h2, h5, h6, p {
   cursor: pointer;
 }
 
-h2:hover, h5:hover, h6:hover {
+h2:hover, h5:hover, h6:hover, p:hover {
   text-decoration: underline;
 }
 
@@ -42,9 +43,9 @@ li:first-of-type {
 }
 
 img {
-  width: 8%;
-  margin: 0 1%;
+  width: 50%;
   height: 10vh;
+  align-self: center;
 }
 
 .right {
@@ -69,7 +70,6 @@ h2 {
 }
 
 h4 {
-  width: 8%;
   text-align: center;
   align-self: center;
 }
@@ -90,21 +90,13 @@ h5::before {
   content: "💬 ";
 }
 
-h4::before {
-  content: "▲";
-}
-
-h4::after {
-  content: "▼";
-}
-
 button:focus {
   outline: none
 }
 button {
   position: absolute;
   right: 10px;
-  top: 15px;
+  top: 25px;
   color: #fff;
   padding: 5px 10px;
   text-shadow: -2px 2px #346392;
@@ -151,4 +143,24 @@ img#loading {
   width: 20%;
   height: auto;
   margin-left: 45%;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 20%;
+  align-items: center;
+}
+
+.votes {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  color: #777;
+  display: inline-flex;
+  align-self: center;
+  font-size: 15px;
 }
