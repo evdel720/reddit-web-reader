@@ -19,7 +19,7 @@ h2, h5, h6, p {
   cursor: pointer;
 }
 
-h2:hover, h5:hover, h6:hover, p:hover {
+h2:hover, h5:hover, p:hover {
   text-decoration: underline;
 }
 
@@ -129,14 +129,25 @@ button:active {
   box-shadow: inset 0 0 0 1px #27496d,inset 0 5px 5px #193047;
 }
 
-h6 {
-  display: inline;
-  margin-left: 5px;
+ol {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 20px;
 }
 
-ol {
-  margin-left: 3%;
-  margin-bottom: 20px;
+h6 {
+  display: inline;
+  padding: 0 10px;
+  border-left: #aaa 1px solid;
+}
+
+h6:first-of-type {
+  border-left: none;
+}
+
+h6:hover {
+  background-color: #ddd;
 }
 
 img#loading {
