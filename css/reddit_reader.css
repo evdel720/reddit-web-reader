@@ -57,6 +57,7 @@ img {
 
 h2 {
   padding-left: 10px;
+  display: inline;
 }
 
 .below {
@@ -70,8 +71,13 @@ h2 {
 }
 
 h4 {
-  text-align: center;
   align-self: center;
+  margin-right: 10px;
+}
+
+h4::before {
+  content: '▲';
+  color: #777;
 }
 
 h3 {
@@ -93,6 +99,7 @@ h5::before {
 button:focus {
   outline: none
 }
+
 button {
   position: absolute;
   right: 10px;
@@ -162,11 +169,6 @@ img#loading {
   justify-content: space-around;
   width: 20%;
   align-items: center;
-}
-
-.votes {
-  display: flex;
-  flex-direction: column;
 }
 
 p {

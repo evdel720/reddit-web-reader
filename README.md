@@ -73,10 +73,6 @@ When user refresh the page or visit another page, if I hold the access_token in 
 
 I also set last in sessionStorage to store the id of last post in the current page. When user first loads the page, I made sure it's not there. Once user loads posts, it stores the last post's id. When I make request posts api call to Reddit, I can add that id to get the next posts after that. When user scrolls to the end of the page, the app shows the loading image and requests more after the last post. I added two event listeners for that to make sure mobile support.
 
-### Votes
-
-I implemented voting feature and if it is done successfully, the app shows the success message shortly.
-
 ### mobile responsive design
 
 I used media query to support mobile environment and jQuery event, touchmove to build mobile event control.
