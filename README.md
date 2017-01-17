@@ -1,6 +1,3 @@
-TODO
-take care of vote success
-
 # Reddit Web Reader
 
 It is a single page app that enables users to navigate Reddit. I used JavaScript, HTML, CSS, jQuery, Serve and Reddit API.
@@ -18,7 +15,7 @@ DEFAULT_IMG
 
 client id and secret would be in https://www.reddit.com/prefs/apps
 redirect uri should be http://localhost:3000
-state is just random string(good to be unique)
+state is just random string (good to be unique)
 reddit is https://oauth.reddit.com
 I used https://res.cloudinary.com/wkdal720/image/upload/v1484353630/default_wwyrhs.png for my default image.
 
@@ -36,11 +33,11 @@ You can go to localhost:3000 and play with the app.
 
 ### Reddit API
 
-I used Reddit API to get all the data from the site. The app makes cross site requests to Reddit API using jQuery.
+I used the Reddit API to get all the data from the site. The app makes cross site requests to the Reddit API using jQuery.
 
 ### OAuth2
 
-Reddit uses OAuth2 to authorize requests. First the app takes user to Reddit authorization link and if user allows authorization, Reddit redirect user to the redirect_uri(that I set in preference page) with some code. With that code, I can get the access token by making another request with 'Authorization' in header. It actually sends two requests because it is cross domain requests(OPTION and the request, in here, POST). I implemented with beforeSend in jQuery for that part.
+Reddit uses OAuth2 to authorize requests. First the app takes the user to a Reddit authorization link and if the user allows authorization, Reddit redirects the user to the redirect_uri (set in preference page) with a code. With that code, I can get the access token by making another request with 'Authorization' in the header. It actually sends two requests because it is a cross domain request (OPTION and the request, POST). I implemented this with beforeSend in jQuery.
 ```javascript
 
 $.ajax({
@@ -67,15 +64,15 @@ $.ajax({
 ```
 ### SessionStorage
 
-When user refresh the page or visit another page, if I hold the access_token in my js files only, it goes away. I saved those necessary information (like access_token, refresh_token, expiration_time, section) in sessionStorage. Since it stores data with the origin url, when user refreshes or comes back from some other page, the access_token stays so user doesn't have to allow access many times. Since Reddit API's access_token expires in an hour, I need to refresh the token once the time gets closer, so I set the timeout for that. Whenever user loads the html file again, it calculate the time left from the expiration_time and sets timeout with proper time.
+When the user refreshes the page or visits another page, if I hold the access_token in my js files only, it goes away. I saved the necessary information (like access_token, refresh_token, expiration_time, section) in sessionStorage. Since it stores data with the origin url, when the user refreshes or comes back from some other page, the access_token stays so the user doesn't have to allow access many times. Since Reddit API's access_token expires in an hour, I need to refresh the token once the time gets closer, so I set the timeout for that. Whenever the user loads the html file again, it calculates the time remaining from the expiration_time and sets a timeout with proper time.
 
 ### Infinite Scroll
 
-I also set last in sessionStorage to store the id of last post in the current page. When user first loads the page, I made sure it's not there. Once user loads posts, it stores the last post's id. When I make request posts api call to Reddit, I can add that id to get the next posts after that. When user scrolls to the end of the page, the app shows the loading image and requests more after the last post. I added two event listeners for that to make sure mobile support.
+I also set last in sessionStorage to store the id of last post in the current page. When user first loads the page, I made sure it's not there. Once the user loads posts, it stores the last post's id. When I make a request posts api call to Reddit, I can add that id to get the next posts after that. When the user scrolls to the end of the page, the app shows the loading image and requests more after the last post. I added two event listeners for that for mobile support.
 
 ### mobile responsive design
 
-I used media query to support mobile environment and jQuery event, touchmove to build mobile event control.
+I used media query to support mobile environments and a jQuery event, touchmove to build mobile event control.
 
 ```css
 @media only screen
