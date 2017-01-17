@@ -14,7 +14,7 @@ REDDIT
 DEFAULT_IMG
 
 client id and secret would be in https://www.reddit.com/prefs/apps
-redirect uri should be http://localhost:3000
+redirect uri should be http://localhost:3000 (I set that in prefs in Reddit too)
 state is just random string (good to be unique)
 reddit is https://oauth.reddit.com
 I used https://res.cloudinary.com/wkdal720/image/upload/v1484353630/default_wwyrhs.png for my default image.
@@ -25,7 +25,7 @@ If you don't have serve package, type below in terminal.
 $ npm install -g serve
 
 Next, move to the folder and run the app in localhost by typing below in terminal.
-$ serve
+$ serve -p 3000
 
 You can go to localhost:3000 and play with the app.
 
