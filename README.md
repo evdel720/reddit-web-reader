@@ -21,7 +21,7 @@ I used https://res.cloudinary.com/wkdal720/image/upload/v1484353630/default_wwyr
 
 If you got this from me as zip file, you don't need to do that step.
 
-If you don't have serve package, type below in terminal.
+If you don't have serve npm package, type below in terminal.
 $ npm install -g serve
 
 Next, move to the folder and run the app in localhost by typing below in terminal.
@@ -81,3 +81,9 @@ I used media query to support mobile environments and a jQuery event, touchmove 
   and (-webkit-min-device-pixel-ratio: 2)
 
 ```
+
+todo list
+get my info when have access token in session storage
+and keep the data in js to enable more features (save, votes, share, hide, report)
+add tabs to see save/upvoted/downvoted/hidden
+checkbox to enable nsfw
