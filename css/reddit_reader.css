@@ -71,7 +71,7 @@ h3 {
   color: #777;
 }
 
-h5 {
+h5:first-of-type {
   width: 10%;
 }
 
@@ -79,7 +79,7 @@ i {
   margin-right: 10px;
 }
 
-h5::before {
+h5:first-of-type::before {
   content: "💬 ";
 }
 
