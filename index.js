@@ -1,29 +1,10 @@
 
 $().ready(() => {
   const expirationTime = Number(sessionStorage.getItem('expiration_time'));
-  $('ol').children().click(changeSectionTo);
   setUpInitialSection();
   checkExpired(expirationTime);
   checkLoggedIn(expirationTime);
 });
-
-const changeSectionTo = (e) => {
-  sessionStorage.setItem('section', e.target.id);
-  sessionStorage.removeItem('last');
-  $('ul').empty();
-  requestPosts();
-};
-
-const setUpInterface = (connect) => {
-  connect.addClass('hidden');
-  $("ol").removeClass('hidden');
-  const edit = $("#edit");
-  edit.removeClass('hidden');
-  edit.click((e) => {
-    e.preventDefault();
-    window.location = 'https://www.reddit.com/subreddits/';
-  });
-};
 
 const setUpInitialSection = () => {
   sessionStorage.removeItem('last');
@@ -46,7 +27,7 @@ const checkLoggedIn = (expTime) => {
   const connect = $("#connect");
   if (sessionStorage.getItem('access_token')) {
     setUpInterface(connect);
-    requestPosts();
+    requestAccountInfo();
     // setup requesting refresh token (since it expires in 60 mins from the initial access request)
     // it refreshed before 5 minutes
     const refreshIn = expTime - new Date().getTime() - 300000;
@@ -58,4 +39,23 @@ const checkLoggedIn = (expTime) => {
       getAccessCode(url.searchParams);
     }
   }
+};
+
+const changeSectionTo = (e) => {
+  sessionStorage.setItem('section', e.target.id);
+  sessionStorage.removeItem('last');
+  $('ul').empty();
+  requestPosts();
+};
+
+const setUpInterface = (connect) => {
+  $('ol').children().click(changeSectionTo);
+  connect.addClass('hidden');
+  $("ol").removeClass('hidden');
+  const edit = $("#edit");
+  edit.removeClass('hidden');
+  edit.click((e) => {
+    e.preventDefault();
+    window.location = 'https://www.reddit.com/subreddits/';
+  });
 };

@@ -87,4 +87,4 @@ get my info when have access token in session storage
 and keep the data in js to enable more features (save, votes, hide, report)
 share feature
 add tabs to see save/upvoted/downvoted/hidden
-checkbox to enable nsfw
+voting/save/unsave/hide/unhide
