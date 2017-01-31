@@ -65,12 +65,6 @@ h2 {
 
 h4 {
   align-self: center;
-  margin-right: 10px;
-}
-
-h4::before {
-  content: '▲';
-  color: #777;
 }
 
 h3 {
@@ -186,4 +180,16 @@ div#error {
 #connect {
   right: 38%;
   top: 20%;
+}
+
+.votes {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  color: #777;
+  display: inline-flex;
+  align-self: center;
+  font-size: 15px;
 }

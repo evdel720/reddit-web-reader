@@ -83,14 +83,9 @@ I used media query to support mobile environments and a jQuery event, touchmove 
 ```
 
 todo list
-get my info when have access token in session storage
-and keep the data in js to enable more features (save, votes, hide, report)
-=> this is too slow
-what about when vote, just refresh the page
-and have tabs, when go to the tab, request each thing like I did for others
-that could work
 
-
-share feature
-add tabs to see save/upvoted/downvoted/hidden
-voting/save/unsave/hide/unhide
+show links to save/hide on posts
+if the section is upvoted/downvoted/saved/hidden,
+show notifications on success
+show the appropriate link (like, unvote for votings, unsave for saved, unhide for hidden)
+implement vote/save/hide and undo those
