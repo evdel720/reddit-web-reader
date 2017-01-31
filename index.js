@@ -55,6 +55,9 @@ const checkLoggedIn = (expTime) => {
 };
 
 const changeSectionTo = (e) => {
+  if (e.target.id === sessionStorage.getItem('section')) {
+    return;
+  }
   $(`#${sessionStorage.getItem('section')}`).removeClass('picked');
   sessionStorage.setItem('sectionType', e.target.classList[0]);
   sessionStorage.setItem('section', e.target.id);
@@ -66,7 +69,7 @@ const changeSectionTo = (e) => {
 
 const setUpInterface = (connect) => {
   const section = $('ol');
-  section.children().not('.picked').click(changeSectionTo);
+  section.children().click(changeSectionTo);
   section.removeClass('hidden');
   $('h1').addClass('hidden');
   connect.addClass('hidden');

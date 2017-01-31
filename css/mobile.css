@@ -53,6 +53,10 @@
     overflow: hidden;
     white-space: nowrap;
   }
+
+  #connect {
+    top: 15%;
+  }
 }
 
 @media only screen
@@ -109,5 +113,9 @@
     width: 30px;
     overflow: hidden;
     white-space: nowrap;
+  }
+  
+  #connect {
+    top: 15%;
   }
 }

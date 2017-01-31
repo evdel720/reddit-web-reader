@@ -28,6 +28,7 @@ Next, move to the folder and run the app in localhost by typing below in termina
 $ serve -p 3000
 
 You can go to localhost:3000 and play with the app.
+(For mobile navigation, mouse scrolling will not trigger the touchmove event so please make sure to use click and drag to trigger infinite scroll in mobile view.)
 
 ## Features & Implementation
 
@@ -70,6 +71,10 @@ When the user refreshes the page or visits another page, if I hold the access_to
 
 I also set last in sessionStorage to store the id of last post in the current page. When user first loads the page, I made sure it's not there. Once the user loads posts, it stores the last post's id. When I make a request posts api call to Reddit, I can add that id to get the next posts after that. When the user scrolls to the end of the page, the app shows the loading image and requests more after the last post. I added two event listeners for that for mobile support.
 
+### features
+
+I implemented additional features such as votes (upvoting/downvoting/unvoting), save/unsave, hide/unhide for better user experience. When any action has succeeded, it shows a short notification. Also I added more tabs for showing those sections.
+
 ### mobile responsive design
 
 I used media query to support mobile environments and a jQuery event, touchmove to build mobile event control.
@@ -81,7 +86,3 @@ I used media query to support mobile environments and a jQuery event, touchmove 
   and (-webkit-min-device-pixel-ratio: 2)
 
 ```
-
-todo list
-
-change button style
