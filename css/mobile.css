@@ -57,6 +57,10 @@
   #connect {
     top: 15%;
   }
+  
+  #notification {
+    font-size: 35px;
+  }
 }
 
 @media only screen
@@ -114,8 +118,12 @@
     overflow: hidden;
     white-space: nowrap;
   }
-  
+
   #connect {
     top: 15%;
+  }
+
+  #notification {
+    font-size: 35px;
   }
 }
