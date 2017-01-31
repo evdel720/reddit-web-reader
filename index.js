@@ -1,46 +1,61 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-  let connect = document.getElementById('connect');
-  let section = document.querySelector('ol');
-  let edit = document.getElementById('edit');
+$().ready(() => {
+  const expirationTime = Number(sessionStorage.getItem('expiration_time'));
+  $('ol').children().click(changeSectionTo);
+  setUpInitialSection();
+  checkExpired(expirationTime);
+  checkLoggedIn(expirationTime);
+});
 
-  // to edit subreddits, takes user to the edit page
-  edit.addEventListener('click', (e) => {
+const changeSectionTo = (e) => {
+  sessionStorage.setItem('section', e.target.id);
+  sessionStorage.removeItem('last');
+  $('ul').empty();
+  requestPosts();
+};
+
+const setUpInterface = (connect) => {
+  connect.addClass('hidden');
+  $("ol").removeClass('hidden');
+  const edit = $("#edit");
+  edit.removeClass('hidden');
+  edit.click((e) => {
     e.preventDefault();
     window.location = 'https://www.reddit.com/subreddits/';
   });
+};
 
-  let expirationTime = Number(sessionStorage.getItem('expiration_time'));
-  setSectionChangeHandlers();
-
-  // whenever page refreshes, the last should be initialized
+const setUpInitialSection = () => {
   sessionStorage.removeItem('last');
-
   if (!sessionStorage.getItem('section')) {
     // setup the default section
     sessionStorage.setItem('section', "hot");
   }
+};
 
-  if (expirationTime &&
-    expirationTime < new Date().getTime()) {
+const checkExpired = (expTime) => {
+  if (expTime &&
+    expTime < new Date().getTime()) {
     // if the token is already expired but still in storage,
     // clear sessionStorage
     sessionStorage.clear();
   }
+};
 
+const checkLoggedIn = (expTime) => {
+  const connect = $("#connect");
   if (sessionStorage.getItem('access_token')) {
-    showInterface(connect, section, edit);
+    setUpInterface(connect);
     requestPosts();
     // setup requesting refresh token (since it expires in 60 mins from the initial access request)
     // it refreshed before 5 minutes
-    let refreshIn = expirationTime - new Date().getTime() - 300000;
-    setRefreshTimeout(refreshIn);
+    const refreshIn = expTime - new Date().getTime() - 300000;
+    window.setTimeout(requestRefresh, refreshIn);
   } else {
-    connect.addEventListener('click', requestLogin);
+    connect.click(requestLogin);
     let url = new URL(window.location.href);
     if (url.search !== '' && !url.searchParams.get('error')) {
-      showInterface(connect, section, edit);
       getAccessCode(url.searchParams);
     }
   }
-});
+};
