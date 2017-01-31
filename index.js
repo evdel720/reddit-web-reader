@@ -55,8 +55,10 @@ const checkLoggedIn = (expTime) => {
 };
 
 const changeSectionTo = (e) => {
+  $(`#${sessionStorage.getItem('section')}`).removeClass('picked');
   sessionStorage.setItem('sectionType', e.target.classList[0]);
   sessionStorage.setItem('section', e.target.id);
+  $(`#${sessionStorage.getItem('section')}`).addClass('picked');
   sessionStorage.removeItem('last');
   $('ul').empty();
   requestPosts();
@@ -64,10 +66,11 @@ const changeSectionTo = (e) => {
 
 const setUpInterface = (connect) => {
   const section = $('ol');
-  section.children().click(changeSectionTo);
+  section.children().not('.picked').click(changeSectionTo);
   section.removeClass('hidden');
   $('h1').addClass('hidden');
   connect.addClass('hidden');
+  $(`#${sessionStorage.getItem('section')}`).addClass('picked');
 
   const edit = $("#edit");
   edit.removeClass('hidden');
