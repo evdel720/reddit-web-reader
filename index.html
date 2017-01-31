@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="./jquery-3.1.1.min.js"></script>
     <script src="./lib/secret_key.js"></script>
-    <script src="./lib/data.js"></script>
     <script src="./lib/connect_utils.js"></script>
     <script src="./lib/post_utils.js"></script>
     <script src="./index.js" type="application/javascript"></script>
@@ -17,10 +16,14 @@
   <body>
     <div id="error" class="hidden">Something went wrong. Please refresh and try again.</div>
     <ol class="hidden">
-      <h6 id="hot">Hot</h6>
-      <h6 id="new">New</h6>
-      <h6 id="rising">Rising</h6>
-      <h6 id="top">Top</h6>
+      <h6 id="hot" class="section">Hot</h6>
+      <h6 id="new" class="section">New</h6>
+      <h6 id="rising" class="section">Rising</h6>
+      <h6 id="top" class="section">Top</h6>
+      <h6 id="saved" class="private">Saved</h6>
+      <h6 id="hidden" class="private">Hidden</h6>
+      <h6 id="upvoted" class="private">Upvoted</h6>
+      <h6 id="downvoted" class="private">Downvoted</h6>
     </ol>
     <div class="error"></div>
     <button id="edit" class="hidden">Edit Subreddits</button>
