@@ -4,7 +4,20 @@ $().ready(() => {
   setUpInitialSection();
   checkExpired(expirationTime);
   checkLoggedIn(expirationTime);
+  setUpNotification();
 });
+
+const setUpNotification = () => {
+  const notification = sessionStorage.getItem('notification');
+  if (notification) {
+    const container = $('#notification').text(notification).removeClass('hidden');
+    sessionStorage.removeItem('notification');
+    window.setTimeout(() => {
+      container.text("");
+      container.addClass("hidden");
+    }, 3000);
+  }
+};
 
 const setUpInitialSection = () => {
   sessionStorage.removeItem('last');

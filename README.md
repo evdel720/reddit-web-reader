@@ -84,5 +84,5 @@ I used media query to support mobile environments and a jQuery event, touchmove 
 
 todo list
 
-show notification on success
 add style for the activated section
+change button style
