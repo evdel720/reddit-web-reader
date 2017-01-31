@@ -71,16 +71,8 @@ h3 {
   color: #777;
 }
 
-h5:first-of-type {
-  width: 10%;
-}
-
 i {
   margin-right: 10px;
-}
-
-h5:first-of-type::before {
-  content: "💬 ";
 }
 
 button:focus {
@@ -178,8 +170,9 @@ div#error {
 }
 
 #connect {
-  right: 38%;
-  top: 20%;
+  top: 30%;
+  left: 45%;
+  right: 45%;
 }
 
 .votes {
@@ -192,4 +185,13 @@ p {
   display: inline-flex;
   align-self: center;
   font-size: 15px;
+}
+
+h1 {
+  font-size: xx-large;
+  text-align: center;
+}
+
+h1:first-of-type {
+  margin-top: 30px;
 }

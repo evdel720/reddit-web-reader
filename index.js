@@ -50,9 +50,12 @@ const changeSectionTo = (e) => {
 };
 
 const setUpInterface = (connect) => {
-  $('ol').children().click(changeSectionTo);
+  const section = $('ol');
+  section.children().click(changeSectionTo);
+  section.removeClass('hidden');
+  $('h1').addClass('hidden');
   connect.addClass('hidden');
-  $("ol").removeClass('hidden');
+
   const edit = $("#edit");
   edit.removeClass('hidden');
   edit.click((e) => {

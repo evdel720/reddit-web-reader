@@ -20,12 +20,8 @@
     font-size: 30px;
   }
 
-  h3, h4, h5 {
+  h3, h4, h5, p {
     font-size: 25px;
-  }
-
-  h5 {
-    width: 20%;
   }
 
   img {
@@ -42,12 +38,20 @@
     align-self: center;
   }
 
-  p {
-    display: none;
-  }
-
   h6 {
     font-size: 40px;
+  }
+
+  div.votes {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+  }
+
+  p {
+    width: 30px;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 
@@ -55,7 +59,7 @@
   and (min-device-width: 320px)
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    
+
   ol {
     width: 70%;
     flex-wrap: wrap;
@@ -73,12 +77,8 @@
     font-size: 30px;
   }
 
-  h3, h4, h5 {
+  h3, h4, h5, p {
     font-size: 25px;
-  }
-
-  h5 {
-    width: 20%;
   }
 
   img {
@@ -95,11 +95,19 @@
     align-self: center;
   }
 
-  p {
-    display: none;
-  }
-
   h6 {
     font-size: 40px;
+  }
+
+  div.votes {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+  }
+
+  p {
+    width: 30px;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
