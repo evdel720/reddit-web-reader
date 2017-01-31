@@ -42,11 +42,8 @@ const checkLoggedIn = (expTime) => {
 };
 
 const changeSectionTo = (e) => {
-  if ($(e.target).hasClass('section')) {
-    sessionStorage.setItem('section', e.target.id);
-  } else {
-    sessionStorage.setItem('section', `user/${sessionStorage.name}/${e.target.id}`);
-  }
+  sessionStorage.setItem('sectionType', e.target.classList[0]);
+  sessionStorage.setItem('section', e.target.id);
   sessionStorage.removeItem('last');
   $('ul').empty();
   requestPosts();

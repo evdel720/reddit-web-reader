@@ -85,6 +85,6 @@ I used media query to support mobile environments and a jQuery event, touchmove 
 todo list
 
 if the section is upvoted/downvoted/saved/hidden,
-show notifications on success
+show notification on success
 show the appropriate link (like, unvote for votings, unsave for saved, unhide for hidden)
 implement vote/save/hide and undo those
